@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+<body>
+    <div>
+        <button id="decrement">-</button>
+        <span id="counter"></span>
+        <button id="increment">+</button>
+    </div>
+</body>
+<script>
+    const counter = document.getElementById('counter')
+    const decBtn = document.getElementById('decrement')
+    const incBtn = document.getElementById('increment')
+
+    let count = 0
+    
+    function renderUI(params) {
+        counter.innerHTML = count
+    }
+    
+    incBtn.addEventListener('click', function() {
+        count++
+        renderUI()
+    })
+
+    decBtn.addEventListener('click', function() {
+        count--
+        renderUI()
+    })
+
+    renderUI()
+
+</script>
+</html>

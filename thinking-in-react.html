@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+
+    let data = [
+        {price: "$49.99", name: "Football"},
+        {price: "$9.99", name: "Baseball"},
+        {price: "$29.99", name: "Basketball"},
+        {price: "$99.99", name: "iPod Touch"},
+        {price: "$399.99", name: "iPhone 5"},
+        {price: "$199.99", name: "Nexus 7"}
+    ];
+    
+    const SearchBox = () => (
+        <div>
+            <input type="text" />
+            <input type="checkbox" /> Show only in Stock
+        </div>
+    )
+
+    const StockList = () => (
+        <div>
+            { data.map(item => (
+                <p>{item.name} : { item.price }</p>
+            ))}
+        </div>
+    )
+
+    const App = () => (
+        <div>
+            <SearchBox />
+            <StockList />
+
+        </div>
+    )
+
+    ReactDOM.render(
+        <App />, 
+        document.getElementById('root')
+    )
+    
+</script>
+
+</html>
